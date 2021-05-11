@@ -15878,6 +15878,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/miku/TiendaEnLinea2/Views/Carousels/Edit.cshtml",
+      "TargetPath": "Views\\Carousels\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/miku/TiendaEnLinea2/Views/Orders/Index.cshtml",
       "TargetPath": "Views\\Orders\\Index.cshtml",
       "FileKind": "mvc"
@@ -15963,8 +15968,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/miku/TiendaEnLinea2/Views/Carousels/Index.cshtml",
+      "TargetPath": "Views\\Carousels\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/miku/TiendaEnLinea2/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/miku/TiendaEnLinea2/Views/Carousels/Create.cshtml",
+      "TargetPath": "Views\\Carousels\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

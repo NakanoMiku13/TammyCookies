@@ -1,0 +1,29 @@
+@model IEnumerable<TiendaEnLinea2.Data.Models.Carousel>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="btn-group">
+    <a asp-action="Create">Crear</a>
+</div>
+<div class="row">
+    <div class="col">
+        <table>
+            <thead>
+                <th>Imagen</th>
+                <th>Link</th>
+                <th></th>
+            </thead>
+            <tbody>
+                @foreach(var x in Model){
+                    <td>@x.Link</td>
+                    <td><img src="~/CarouselImg/@x.Img" alt="Img" class="img-fluid" style="hight:150px;"></td>
+                    <td>
+                        <div class="btn-group">
+                            <a asp-action="Edit" class="btn btn-outline-warning" asp-route-id="@x.id">Editar</a>
+                        </div>
+                    </td>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

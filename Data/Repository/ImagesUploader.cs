@@ -57,5 +57,20 @@ namespace TiendaEnLinea2.Data.Repository
             }
             return FileName;
         }
+        public string UploadCarousel(IWebHostEnvironment webHostEnvironment, IFormFile Archivo)
+        {
+            string FileName = null;
+            if (Archivo != null)
+            {
+                string uploaDir = Path.Combine(webHostEnvironment.WebRootPath, "CarouselImg");
+                FileName = Guid.NewGuid().ToString() + "-" + Archivo.FileName;
+                string FilePath = Path.Combine(uploaDir, FileName);
+                using (var FileStream = new FileStream(FilePath, FileMode.Create))
+                {
+                    Archivo.CopyTo(FileStream);
+                }
+            }
+            return FileName;
+        }
     }
 }

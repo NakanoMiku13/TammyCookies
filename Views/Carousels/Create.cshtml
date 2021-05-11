@@ -1,0 +1,17 @@
+@model TiendaEnLinea2.Data.ViewModels.CarouselViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Link"></label>
+        <input asp-for="Link" class="form-control" />
+        <span asp-validation-for="Link" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Img"></label>
+        <input asp-for="Img" class="form-control-file" required/>
+        <span asp-validation-for="Img" class="text-danger"></span>
+    </div>
+    <input class="btn btn-outilne-success" type="submit" value="Cargar">
+</form>
