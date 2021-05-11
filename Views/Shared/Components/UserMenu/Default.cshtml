@@ -1,0 +1,12 @@
+﻿@if (ViewBag.Role == true)
+{
+    <div>
+        <a class="btn btn-outline-success" asp-action="Index" asp-controller="Admin">Admin Menu</a>
+    </div>
+}
+else
+{
+    <div>
+        <a class="btn btn-outline-danger" asp-action="MisCompras" asp-controller="Tienda">Mis compras</a>
+    </div>
+}

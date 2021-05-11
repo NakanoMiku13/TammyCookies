@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TiendaEnLinea2.Data.Models.Contacto>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+<div class="btn-group">
+    <a asp-action="Create" class="btn btn-outline-success">Crear uno nuevo</a>
+    <a asp-action="Index" asp-controller="Admin" class="btn btn-outline-info">Regresar</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.userid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Published)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mensaje)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.userid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Published)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mensaje)
+            </td>
+            <td>
+                <div class="btn-group">
+                    <a asp-action="Answer" class="btn btn-outline-success" asp-route-userid="@item.userid">Responder</a>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

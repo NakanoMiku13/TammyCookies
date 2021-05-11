@@ -1,0 +1,63 @@
+﻿@model TiendaEnLinea2.Data.Models.Order
+@{
+    ViewData["Title"] = "CheckOut";
+}
+<!-- Custom styles for this template -->
+<link href="form-validation.css" rel="stylesheet">
+    <div class="container">
+            <div class="row g-3">
+                <div class="col-md-7 col-lg-8">
+                    <h4 class="mb-3">Datos del usuario</h4>
+                    <form class="needs-validation" asp-action="CheckOut">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label asp-for="Nombre" class="form-label"></label>
+                                <input asp-for="Nombre" class="form-control" id="firstName" placeholder="Coloca tu nombre" required>
+                                <div class="invalid-feedback">
+                                   Por favor ingresa tu nombre
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label asp-for="Apellidos" class="form-label"></label>
+                                <input asp-for="Apellidos" class="form-control" id="lastName" placeholder="Coloca tus apellidos" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingresa tu apellido
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address" class="form-label">Direcci&oacute;n</label>
+                                <input asp-for="Direccion" class="form-control" id="address" placeholder="1234 Main St" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingresa tu direcci&oacute;n de env&iacute;o
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address2" class="form-label">Colonia</label>
+                                <input asp-for="Colonia" class="form-control" id="address2" placeholder="Ingresa tu colonia">
+                            </div>
+                            <div class="col-12">
+                                <label for="address2" class="form-label">C&oacute;digo Postal</label>
+                                <input asp-for="CP" class="form-control" id="address2" placeholder="Ingresa tu codigo postal">
+                            </div>
+                            <div class="col-12">
+                                <label for="address2" class="form-label">Estado</label>
+                                <input asp-for="Estado" class="form-control" id="address2" placeholder="Ingresa tu estado">
+                            </div>
+                                  <div class="col-12">
+                                      <label class="form-label">Telefono</label>
+                                      <input asp-for="Numero" required type="number" class="form-control" placeholder="Ingresa tu numero telefonico"/>
+                                  </div>
+                                  <div class="col-12">
+                                      <label class="form-check-label" asp-for="Politicas"></label>
+                                      <input asp-for="Politicas" required  class="form-check-input"/>
+                                  </div>
+                        </div>
+
+                        <button class="w-100 btn btn-primary btn-lg" type="submit">Finalizar</button>
+                    </form>
+                </div>
+            </div>
+    </div>

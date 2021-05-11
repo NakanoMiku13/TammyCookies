@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TiendaEnLinea2.Data.Models.Producto>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1>Inicio</h1>
+
+<p>
+    <div class="btn-group">
+        <a asp-action="Create" class="btn btn-outline-success">Crear uno nuevo</a>
+        <a asp-action="Index" asp-controller="Admin" class="btn btn-outline-info">Regresar</a>
+    </div>
+    
+</p>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>Imagen</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td class="text-wrap">
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                <img src="~/UploadedImages/@item.Imagen" class="img-fluid"/>
+            </td>
+            <td>
+                <div class="btn-group">
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

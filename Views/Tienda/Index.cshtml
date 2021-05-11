@@ -1,0 +1,147 @@
+﻿@model IEnumerable<TiendaEnLinea2.Data.Models.Producto>
+@inject ApplicationDbContext context
+@{
+    ViewData["Title"] = "Inicio";
+}
+<div id="acarouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a asp-action="Index" asp-route-Category="Toner"><img src="~/CarouselImg/1.gif" class="d-block w-100" style="height:250px;" alt="..."></a>
+        </div>
+        <div class="carousel-item">
+            <a asp-action="Index" asp-route-Category="Polvo"><img src="~/CarouselImg/2.gif" class="d-block w-100" alt="..." style="height:250px;"></a>
+        </div>
+        <div class="carousel-item">
+            <a asp-action="Index" asp-route-Category="Extra"><img src="~/CarouselImg/3.gif" class="d-block w-100" alt="..." style="height:250px;"></a>
+        </div>
+    </div>
+    <button class="carousel-control-prev" role="button" href="#acarouselExampleControls" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" role="button" href="#acarouselExampleControls" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<br />
+<br />
+<br />
+@if (ViewBag.Set == true)
+{
+    <h2 class="text-center alert alert-info">Nuestras marcas afiliadas</h2>
+    @if (ViewBag.Brands != null)
+    {
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var item in ViewBag.Brands)
+            {
+                <div class="col">
+                    <a asp-action="Index" asp-route-Brand="@item.id" asp-route-Category="@ViewBag.Cat">
+                        <div class="card bg-dark text-white">
+                            <img src="~/BrandsImg/@item.Img" class="card-img" alt="@item.Nombre">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">@item.Nombre</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    }
+}
+<br />
+<br />
+<br />
+<div class="row">
+    @foreach (var item in Model)
+    {
+        var Mod = context.Images.FirstOrDefault(p => p.ProdId == item.id);
+        <div id="a_@item.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modal-content">
+                            <div id="b_@item.id" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="~/ImagesRespos/@Mod.Img1" class="d-block w-100">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="~/ImagesRespos/@Mod.Img2" class="d-block w-100">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="~/ImagesRespos/@Mod.Img3" class="d-block w-100">
+                                    </div>
+                                    @if (Mod.Img4 != null)
+                                    {
+                                        <div class="carousel-item">
+                                            <img src="~/ImagesRespos/@Mod.Img4" class="d-block w-100">
+                                        </div>
+                                    }
+                                    @if (Mod.Img5 != null)
+                                    {
+                                        <div class="carousel-item">
+                                            <img src="~/ImagesRespos/@Mod.Img5" class="d-block w-100">
+                                        </div>
+                                    }
+                                    @if (Mod.Img6 != null)
+                                    {
+                                        <div class="carousel-item">
+                                            <img src="~/ImagesRespos/@Mod.Img6" class="d-block w-100">
+                                        </div>
+                                    }
+                                    @if (Mod.Img7 != null)
+                                    {
+                                        <div class="carousel-item">
+                                            <img src="~/ImagesRespos/@Mod.Img7" class="d-block w-100">
+                                        </div>
+                                    }
+                                    @if (Mod.Img8 != null)
+                                    {
+                                        <div class="carousel-item">
+                                            <img src="~/ImagesRespos/@Mod.Img8" class="d-block w-100">
+                                        </div>
+                                    }
+                                </div>
+                                <button class="carousel-control-prev" role="button" href="#b_@item.id" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" role="button" href="#b_@item.id" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 card" style="width: 18rem;">
+            <a href="#a_@item.id" data-toggle="modal"><img src="~/UploadedImages/@item.Imagen" alt="@item.Nombre" class="card-img-top"></a>
+            <div class="card-body">
+                <h5 class="card-title">@item.Nombre</h5>
+                <p class="card-text">@item.Descripcion</p>
+                <p class="card-text">
+                    <span class="alert alert-success">
+                        $ @item.Precio
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card-fill" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z" />
+                        </svg>
+                    </span>
+                </p>
+                <a class="btn btn-outline-success" asp-action="AddToCart" asp-controller="ShoppingCart" asp-route-id="@item.id">
+                    Agregar al carrito
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    }
+</div>

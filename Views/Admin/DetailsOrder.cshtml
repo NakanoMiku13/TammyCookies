@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TiendaEnLinea2.Controllers.TmpList>
+
+@{
+    ViewData["Title"] = "DetailsOrder";
+}
+
+<h1>Detalles de la orden:</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre del producto</th>
+            <th>Descripci&oacute;n</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           <td>@item.prod.Nombre</td>
+           <td>@item.prod.Descripcion</td>
+           <td>@item.prod.Precio</td>
+           <td>@item.Cantidad</td>
+           <td><img src="~/UploadedImages/@item.prod.Imagen" alt="@item.prod.Nombre" style="height:250px;"/></td>
+        </tr>
+}
+    </tbody>
+</table>

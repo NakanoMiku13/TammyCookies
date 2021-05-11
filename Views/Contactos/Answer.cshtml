@@ -1,0 +1,17 @@
+﻿@model TiendaEnLinea2.Data.Models.Respuesta
+@{
+    ViewData["Title"] = "Repuesta";
+}
+
+<h1>Responder</h1>
+
+<form asp-action="Answer">
+    <div class="form-group">
+        <label class="custom-control-label">Respuesta</label>
+        <textarea placeholder="Escribe aqui tu mensaje" asp-for="Mensaje"></textarea>
+    </div>
+    <div>
+        <input hidden value="@Model.userid" asp-for="userid" />
+    </div>
+    <input type="submit" value="Responder" class="btn btn-outline-secondary"/>
+</form>

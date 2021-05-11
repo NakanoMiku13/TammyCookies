@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TiendaEnLinea2.Data.Models.OrderDetail>
+@inject ApplicationDbContext context
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1>Detalles</h1>
+
+<p>
+    <a asp-action="MisCompras" class="btn btn-outline-success">Regresar</a>
+</p>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>
+                Producto
+            </th>
+            <th>
+                Imagen
+            </th>
+            <th>
+                Descripci&oacute;n
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                Subtotal
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var prod = context.Producto.FirstOrDefault(p => p.id == Convert.ToInt32(item.Prodid));
+            @if (prod != null)
+            {
+                <tr>
+                    <td>
+                        @prod.Nombre
+                    </td>
+                    <td>
+                        <img src="~/UploadedImages/@prod.Imagen" alt="@prod.Nombre" style="height:150px;" class="img-fluid" />
+                    </td>
+                    <td class="text-wrap">
+                        @prod.Descripcion
+                    </td>
+                    <td>
+                        @item.Cantidad
+                    </td>
+                    <td class="text-success">
+                        $@(item.Cantidad*prod.Precio)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

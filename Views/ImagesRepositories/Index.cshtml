@@ -1,0 +1,80 @@
+﻿@model IEnumerable<TiendaEnLinea2.Data.Models.ImagesRepository>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1>Inicio</h1>
+<p>
+    <div class="btn-group">
+        <a asp-action="Index" asp-controller="Admin" class="btn btn-outline-success">Regresar</a>
+    </div>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img8)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdId)
+            </td>
+            <td>
+                <img src="~/ImagesRespos/@item.Img1" style="height:250px;"/>
+            </td>
+            <td>
+                <img src="~/ImagesRespos/@item.Img2" style="height:250px;" />
+            </td>
+            <td>
+                <img src="~/ImagesRespos/@item.Img3" style="height:250px;" />
+            </td>
+            <td>
+                <img src="~/ImagesRespos/@item.Img4" style="height:250px;" />
+            </td>
+            <td>
+                <img src="~/ImagesRespos/@item.Img5" style="height:250px;" />
+            </td>
+            <td>
+                <img src="~/ImagesRespos/@item.Img6" style="height:250px;" />
+            </td>
+            <td>
+                <img src="~/ImagesRespos/@item.Img7" style="height:250px;" />
+            </td>
+            <td>
+                <img src="~/ImagesRespos/@item.Img8" style="height:250px;" />
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
