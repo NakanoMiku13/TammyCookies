@@ -3,51 +3,30 @@
 @{
     ViewData["Title"] = "Inicio";
 }
-<div id="acarouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <a asp-action="Index" asp-route-Category="Toner"><img src="~/CarouselImg/1.gif" class="d-block w-100" style="height:250px;" alt="..."></a>
-        </div>
-        <div class="carousel-item">
-            <a asp-action="Index" asp-route-Category="Polvo"><img src="~/CarouselImg/2.gif" class="d-block w-100" alt="..." style="height:250px;"></a>
-        </div>
-        <div class="carousel-item">
-            <a asp-action="Index" asp-route-Category="Extra"><img src="~/CarouselImg/3.gif" class="d-block w-100" alt="..." style="height:250px;"></a>
-        </div>
-    </div>
-    <button class="carousel-control-prev" role="button" href="#acarouselExampleControls" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" role="button" href="#acarouselExampleControls" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-<br />
-<br />
-<br />
-@if (ViewBag.Set == true)
-{
-    <h2 class="text-center alert alert-info">Nuestras marcas afiliadas</h2>
-    @if (ViewBag.Brands != null)
-    {
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            @foreach (var item in ViewBag.Brands)
-            {
-                <div class="col">
-                    <a asp-action="Index" asp-route-Brand="@item.id" asp-route-Category="@ViewBag.Cat">
-                        <div class="card bg-dark text-white">
-                            <img src="~/BrandsImg/@item.Img" class="card-img" alt="@item.Nombre">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">@item.Nombre</h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+@if(ViewBag.Carousel!=null){
+    <div id="acarouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @foreach(var x in ViewBag.Carousel){
+                if(x.TabIndex==1){
+                    <div class="carousel-item active">
+                        <a asp-action="@x.Link"><img src="~/CarouselImg/@x.Img" class="d-block w-100" style="height:250px;" alt="..."></a>
+                    </div>
+                }else{
+                    <div class="carousel-item">
+                        <a asp-action="@x.Link"><img src="~/CarouselImg/@x.Img" class="d-block w-100" alt="..." style="height:250px;"></a>
+                    </div>
+                }
             }
         </div>
-    }
+        <button class="carousel-control-prev" role="button" href="#acarouselExampleControls" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" role="button" href="#acarouselExampleControls" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 }
 <br />
 <br />

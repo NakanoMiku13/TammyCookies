@@ -26,7 +26,14 @@ namespace TiendaEnLinea2.Controllers
         }
         public IActionResult OrderMenu()
         {
-            return View(context.Orders.ToList().Where(p => p.Visible == true).OrderBy(p => p.Ordenado));
+            return View(context.Orders.ToList().Where(p => p.Visible == true && p.Pay==true).OrderBy(p => p.Ordenado));
+        }
+        public ViewResult SetPaymentStatus(int? id){ 
+            var x=context.Orders.Find(id);
+            x.Pay=true;
+            context.Update(x);
+            context.SaveChanges();
+            return View("Index");
         }
         public ViewResult ClearTmp()
         {

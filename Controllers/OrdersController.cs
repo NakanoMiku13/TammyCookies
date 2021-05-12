@@ -53,7 +53,7 @@ namespace TiendaEnLinea2.Controllers
                 }
                 else
                 {
-                    total = shoppingCart.GetShoppingCartTotal();
+                    total = Convert.ToDecimal(shoppingCart.GetShoppingCartTotal());
                 }
                 order.RefPago = refe.GenRef(userid, context);
                 foreach (var item in shoppingCart.ShoppingCartItems)
@@ -77,6 +77,7 @@ namespace TiendaEnLinea2.Controllers
                 order.Ordenado = DateTime.Now;
                 order.Total = total;
                 order.userid = userid;
+                order.Pay=false;
                 await context.AddAsync(new Tempo()
                 {
                     order=order,

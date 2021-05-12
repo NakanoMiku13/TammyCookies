@@ -10,6 +10,6 @@ namespace TiendaEnLinea2.Data.ViewModels
     {
         public ShoppingCart ShoppingCart { get; set; }
         public Producto Producto { get; set; }
-        public decimal shoppingCartTotal { get; set; }
+        public double shoppingCartTotal { get; set; }
     }
 }

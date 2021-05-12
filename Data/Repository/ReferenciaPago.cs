@@ -10,7 +10,7 @@ namespace TiendaEnLinea2.Data.Repository
         public string GenRef (string userid, ApplicationDbContext context)
         {
             var user = context.Users.Find(userid);
-            string Ref = user.NormalizedUserName + Set();
+            string Ref = Set();
             return Ref;
         }
         private protected char Let()

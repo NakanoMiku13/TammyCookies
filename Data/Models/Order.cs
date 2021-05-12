@@ -25,5 +25,6 @@ namespace TiendaEnLinea2.Data.Models
         public bool Visible { get; set; }
         public bool Cancelado { get; set; }
         public decimal Total { get; set; }
+        public bool Pay {get;set;}
     }
 }

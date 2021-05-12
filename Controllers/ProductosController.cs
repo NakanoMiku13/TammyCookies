@@ -50,7 +50,7 @@ namespace TiendaEnLinea2.Controllers
                     Precio = produc.Precio,
                     Imagen = imagesUploader.UploadProduct(produc, webHostEnvironment),
                     CategoryId = produc.CategoryId,
-                    BrandId=produc.BrandId
+                    BrandId=0
                 };
                 await context.AddAsync(prod);
                 await context.SaveChangesAsync();

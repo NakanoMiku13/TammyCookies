@@ -60,32 +60,5 @@
 </div>
 
 <div class="row">
-    <div class="col-12" id="paypal-button-container"></div>
+    <a class="btn btn-outline-success" asp-action="OnAprove">Completar</a>
 </div>
-<script src="https://www.paypal.com/sdk/js?client-id=AVY3IuQEihmKqzHUOpAna-8XWAynDw1fHd1RO0UtH1-bSJhSIftMAhVxktoIX5IN5tqmXGcj93VxhH3F&currency=MXN"></script>
-<script>
-    paypal.Buttons({
-
-      enableStandardCardFields: true,
-      createOrder: function(data, actions) {
-        return actions.order.create({
-            intent: 'CAPTURE',
-          purchase_units: [
-            {
-              amount: {
-                value: '@ViewBag.Total'
-              }
-            }
-          ]
-        });
-      },
-        onApprove: function (data, actions) {
-            // This function captures the funds from the transaction.
-            return actions.order.capture().then(function (details) {
-                // This function shows a transaction success message to your buyer.
-                window.location.href = '@Url.Content("/Orders/OnAprove/")';
-            });
-        }
-    }).render('#paypal-button-container');
-</script>
-

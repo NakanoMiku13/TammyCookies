@@ -73,9 +73,10 @@ namespace TiendaEnLinea2.Data.Models
             context.RemoveRange(cartItems);
             context.SaveChanges();
         }
-        public decimal GetShoppingCartTotal()
+        public double GetShoppingCartTotal()
         {
-            return context.ShoppingCartItems.Where(p => p.ShoppingCartId == ShoppingCartId).Select(p => p.Producto.Precio * p.Cantidad).Sum();
+            double x = Convert.ToDouble(context.ShoppingCartItems.Where(p => p.ShoppingCartId == ShoppingCartId).Select(p => (double?)p.Producto.Precio * p.Cantidad).Sum());
+            return x;
         }
     }
 }

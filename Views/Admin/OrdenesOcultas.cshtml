@@ -68,6 +68,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Total)
             </th>
+            <th>Pago</th>
             <th></th>
         </tr>
     </thead>
@@ -126,6 +127,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Total)
                 </td>
+                @if(item.Pay){
+                    <td class="text-success">Pagado</td>
+                }else{
+                    <td class="text-danger">Sin confirmar pago</td>
+                }
                 <td>
                     <div class="btn btn-group">
                         <a class="btn btn-info" asp-action="DetailsOrder" asp-route-id="@item.id">Detalles</a>
@@ -135,6 +141,7 @@
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                             </svg>
                         </a>
+                        <a class="btn btn-outline-success" asp-action="SetPaymentStatus" asp-route-id="@item.id">Confirmar pago</a>
                     </div>
                 </td>
             </tr>

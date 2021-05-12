@@ -21,6 +21,7 @@ namespace TiendaEnLinea2.Controllers
         }
         public IActionResult Index(string Category,string Brand)
         {
+            ViewBag.Carousel = context.Carousels.ToList();
             ViewBag.Brands = context.Brands.ToList();
             ViewBag.Cat = Category;
             try
