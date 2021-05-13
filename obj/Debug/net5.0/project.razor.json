@@ -15748,6 +15748,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/miku/TiendaEnLinea2/Views/Admin/OrdenesSinPagar.cshtml",
+      "TargetPath": "Views\\Admin\\OrdenesSinPagar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/miku/TiendaEnLinea2/Views/Productos/Delete.cshtml",
       "TargetPath": "Views\\Productos\\Delete.cshtml",
       "FileKind": "mvc"

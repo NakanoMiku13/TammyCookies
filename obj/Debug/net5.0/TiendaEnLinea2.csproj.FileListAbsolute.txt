@@ -247,3 +247,4 @@
 /home/miku/TiendaEnLinea2/obj/Debug/net5.0/Razor/Views/Carousels/Create.cshtml.g.cs
 /home/miku/TiendaEnLinea2/obj/Debug/net5.0/Razor/Views/Carousels/Edit.cshtml.g.cs
 /home/miku/TiendaEnLinea2/obj/Debug/net5.0/Razor/Views/Carousels/Index.cshtml.g.cs
+/home/miku/TiendaEnLinea2/obj/Debug/net5.0/Razor/Views/Admin/OrdenesSinPagar.cshtml.g.cs

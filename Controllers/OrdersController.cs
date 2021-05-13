@@ -110,8 +110,8 @@ namespace TiendaEnLinea2.Controllers
             {
                 var order = context.tmp.FirstOrDefault(p => p.userid == GetUser() && (p.ordered.Day == DateTime.Now.Day && p.ordered.Month == DateTime.Now.Month && p.ordered.Year == DateTime.Now.Year));
                 order.order = context.Orders.FirstOrDefault(p => p.RefPago == order.RefPago);
-                sender.SendMailToUserTicket(context.OrderDetails.Where(p => p.RefPago == order.RefPago).ToList(), order.order, context);
-                sender.SendMailToAdminNewSell(order.order, context.OrderDetails.Where(p => p.RefPago == order.RefPago).ToList(), context);
+                //sender.SendMailToUserTicket(context.OrderDetails.Where(p => p.RefPago == order.RefPago).ToList(), order.order, context);
+                //sender.SendMailToAdminNewSell(order.order, context.OrderDetails.Where(p => p.RefPago == order.RefPago).ToList(), context);
                 ViewBag.Refe = order.RefPago;
                 var orders = shoppingCart.GetShoppingCartItems();
                 shoppingCart.ShoppingCartItems = orders;

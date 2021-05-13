@@ -98,6 +98,10 @@ namespace TiendaEnLinea2.Controllers
         {
             return View(context.Orders.Where(p => p.Visible == false).OrderBy(p => p.Ordenado).ToList());
         }
+        public IActionResult OrdenesSinPagar(){
+            var x = context.Orders.Where(p => p.Pay == false).OrderBy(p => p.Ordenado).ToList();  
+            return View(x);
+        }
         public RedirectToActionResult Redirect()
         {
             return RedirectToAction("Error", "Error", new ErrorViewModel() { Data = "No se ha podido realizar la operacion" });

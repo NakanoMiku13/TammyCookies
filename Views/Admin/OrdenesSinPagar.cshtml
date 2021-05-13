@@ -1,0 +1,143 @@
+@model IEnumerable<TiendaEnLinea2.Data.Models.Order>
+@{
+    ViewData["Title"] = "OrdenesSinPagar";
+}
+
+
+<h1>Index</h1>
+
+<p>
+    <div class="btn-group">
+        <a asp-action="Index" class="btn btn-outline-success">Regresar</a>
+        <a asp-action="OrderMenu" class="btn btn-outline-warning">Ver ordenes</a>
+    </div>
+
+</p>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.userid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Colonia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Politicas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enviado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ordenado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaDeEnvio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefPago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visible)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cancelado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>Pago</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.userid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Colonia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Politicas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Enviado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ordenado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaDeEnvio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RefPago)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Visible)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cancelado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                @if(item.Pay){
+                    <td class="text-success">Pagado</td>
+                }else{
+                    <td class="text-danger">Sin confirmar pago</td>
+                }
+                <td>
+                    <div class="btn btn-group">
+                        <a class="btn btn-info" asp-action="DetailsOrder" asp-route-id="@item.id">Detalles</a>
+                        <a class="btn btn-outline-success" asp-action="SetPaymentStatus" asp-route-id="@item.id">Confirmar pago</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
