@@ -8090,7 +8090,7 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {}
+    "/home/miku/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -8098,11 +8098,11 @@
       "projectUniqueName": "/home/miku/TiendaEnLinea2/TiendaEnLinea2.csproj",
       "projectName": "TiendaEnLinea2",
       "projectPath": "/home/miku/TiendaEnLinea2/TiendaEnLinea2.csproj",
-      "packagesPath": "/root/.nuget/packages/",
+      "packagesPath": "/home/miku/.nuget/packages/",
       "outputPath": "/home/miku/TiendaEnLinea2/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "/home/miku/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -8187,7 +8187,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
       }
     }
   }
