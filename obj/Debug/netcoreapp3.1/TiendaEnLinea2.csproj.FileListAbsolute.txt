@@ -1,0 +1,8 @@
+/home/miku/TiendaEnLinea2/obj/Debug/netcoreapp3.1/TiendaEnLinea2.csprojAssemblyReference.cache
+/home/miku/TiendaEnLinea2/obj/Debug/netcoreapp3.1/TiendaEnLinea2.AssemblyInfoInputs.cache
+/home/miku/TiendaEnLinea2/obj/Debug/netcoreapp3.1/TiendaEnLinea2.AssemblyInfo.cs
+/home/miku/TiendaEnLinea2/obj/Debug/netcoreapp3.1/TiendaEnLinea2.csproj.CoreCompileInputs.cache
+/home/miku/TiendaEnLinea2/obj/Debug/netcoreapp3.1/TiendaEnLinea2.MvcApplicationPartsAssemblyInfo.cs
+/home/miku/TiendaEnLinea2/obj/Debug/netcoreapp3.1/TiendaEnLinea2.MvcApplicationPartsAssemblyInfo.cache
+/home/miku/TiendaEnLinea2/obj/Debug/netcoreapp3.1/TiendaEnLinea2.RazorAssemblyInfo.cache
+/home/miku/TiendaEnLinea2/obj/Debug/netcoreapp3.1/TiendaEnLinea2.RazorAssemblyInfo.cs

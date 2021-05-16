@@ -25,5 +25,6 @@ namespace TiendaEnLinea2.Data
         public DbSet<ImagesRepository> Images { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Carousel> Carousels {get;set;}
+        public DbSet<Delivery> Delivery{get; set; }
     }
 }

@@ -2,7 +2,7 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "/root/.dotnet/store/|arch|/|tfm|",
-      "/home/miku/.nuget/packages"
+      "/root/.nuget/packages"
     ]
   }
 }

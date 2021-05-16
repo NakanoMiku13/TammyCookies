@@ -21,6 +21,7 @@ namespace TiendaEnLinea2.Data.Models
         public bool Enviado { get; set; }
         public DateTime Ordenado { get; set; }
         public DateTime FechaDeEnvio { get; set; }
+        public int DeliveryId { get; set; }
         public string RefPago { get; set; }
         public bool Visible { get; set; }
         public bool Cancelado { get; set; }

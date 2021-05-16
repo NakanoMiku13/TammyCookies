@@ -8090,7 +8090,7 @@
     ]
   },
   "packageFolders": {
-    "/home/miku/.nuget/packages/": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -8098,11 +8098,11 @@
       "projectUniqueName": "/home/miku/TiendaEnLinea2/TiendaEnLinea2.csproj",
       "projectName": "TiendaEnLinea2",
       "projectPath": "/home/miku/TiendaEnLinea2/TiendaEnLinea2.csproj",
-      "packagesPath": "/home/miku/.nuget/packages/",
+      "packagesPath": "/root/.nuget/packages/",
       "outputPath": "/home/miku/TiendaEnLinea2/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/miku/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

@@ -1,0 +1,32 @@
+@model IEnumerable<TiendaEnLinea2.Data.Models.Delivery>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Index</h1>
+<div class="btn-group">
+    <a asp-action="Create" class="btn btn-outline-success">Agregar nueva fecha</a>
+</div>
+@if(Model==null){
+    <div class="alert alert-info">No se han encontrado fechas</div>
+}else{
+    <div class="row">
+        <table class = "table-responsive">
+            <thead>
+                <th>D&iacute;as</th>
+                <th>Horas</th>
+                <th></th>
+            </thead>
+            <tbody>
+                @foreach(var item in Model){
+                    <td>@item.Day</td>
+                    <td>@item.Hour : @item.Minutes</td>
+                    <td>
+                        <div class="btn-group">
+                            <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.id">Editar</a>
+                        </div>
+                    </td>
+                }
+            </tbody>
+        </table>
+    </div>
+}
