@@ -27,7 +27,7 @@ namespace TiendaEnLinea2.Controllers
         [Authorize(Roles = "admin")]
         public IActionResult Index()
         {
-            var Lista = context.Producto.ToList();
+            var Lista = context.Producto.ToList().OrderBy(p=>p.Calification);
             return View(Lista);
         }
         public IActionResult Create()

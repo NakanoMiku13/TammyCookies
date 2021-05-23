@@ -36,6 +36,10 @@ namespace TiendaEnLinea2.Controllers
             };
             return View(vm);
         }
+        public IActionResult Confirmations(){
+            var MostSelected = context.Producto.ToList().Take(5); 
+            return View(MostSelected);
+        }
         public RedirectToActionResult AddToCart(string id)
         {
             var selected = context.Producto.FirstOrDefault(p => p.id == Convert.ToInt32(id));

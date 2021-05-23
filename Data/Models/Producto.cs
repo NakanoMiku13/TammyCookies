@@ -14,5 +14,6 @@ namespace TiendaEnLinea2.Data.Models
         public string Imagen { get; set; }
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
+        public int Calification{ get; set;}
     }
 }

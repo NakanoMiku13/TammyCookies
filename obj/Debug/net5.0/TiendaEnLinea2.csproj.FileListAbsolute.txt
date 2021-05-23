@@ -251,3 +251,4 @@
 /home/miku/TiendaEnLinea2/obj/Debug/net5.0/Razor/Views/Deliveries/Create.cshtml.g.cs
 /home/miku/TiendaEnLinea2/obj/Debug/net5.0/Razor/Views/Deliveries/Edit.cshtml.g.cs
 /home/miku/TiendaEnLinea2/obj/Debug/net5.0/Razor/Views/Deliveries/Index.cshtml.g.cs
+/home/miku/TiendaEnLinea2/obj/Debug/net5.0/Razor/Views/ShoppingCart/Confirmations.cshtml.g.cs

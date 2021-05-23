@@ -13,7 +13,7 @@
     </div>
     
 </p>
-<table class="table table-responsive">
+<table class="table table-responsive table-danger">
     <thead>
         <tr>
             <th>
@@ -26,6 +26,7 @@
                 @Html.DisplayNameFor(model => model.Precio)
             </th>
             <th>Imagen</th>
+            <th>Puntuaci&oacute;n</th>
             <th></th>
         </tr>
     </thead>
@@ -43,6 +44,14 @@
             </td>
             <td>
                 <img src="~/UploadedImages/@item.Imagen" class="img-fluid"/>
+            </td>
+            <td>
+                <span class="alert alert-danger">
+                    @item.Calification
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                    </svg>
+                </span>
             </td>
             <td>
                 <div class="btn-group">

@@ -92,6 +92,16 @@ namespace TiendaEnLinea2.Controllers
             }
             
         }
+        public RedirectToActionResult Puntuation(int? id){ 
+            var prod = context.Producto.Find(id);
+            if(prod!=null){
+                prod.Calification++;
+                context.Update(prod);
+                context.SaveChanges();
+                return RedirectToAction("Index","Tienda");
+            }
+            return RedirectToAction("Error","Error",new ErrorViewModel(){Data="Error"});
+        }
         [Authorize]
         public IActionResult MisCompras()
         {

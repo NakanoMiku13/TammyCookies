@@ -16033,6 +16033,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/miku/TiendaEnLinea2/Views/ShoppingCart/Confirmations.cshtml",
+      "TargetPath": "Views\\ShoppingCart\\Confirmations.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/miku/TiendaEnLinea2/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
