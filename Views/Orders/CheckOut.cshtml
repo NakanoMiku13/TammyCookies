@@ -50,27 +50,37 @@
                                       <label class="form-label">Telefono</label>
                                       <input asp-for="Numero" required type="number" class="form-control" placeholder="Ingresa tu numero telefonico"/>
                                   </div>
-                                  <div class="col-12">
-                                      <label class="form-check-label">Politicas</label>
-                                      <input asp-for="Politicas" required  class="form-check-input"/>
-                                  </div>
                             </div>
-                            <div class="col-12">
-                                <label>Ingresa el d&iacute;a que quieres recibir tu entrega</label>
-                                <div class="form-group">
-                                    @{
-                                        string d="",m="";
-                                        int Day=DateTime.Now.Day+1;
-                                        if(Day<10) d="0"+Day.ToString();
-                                        else d=Day.ToString();
-                                        int Month=DateTime.Now.Month;
-                                        if(Month<10) m="0"+Month.ToString();
-                                        else m=Month.ToString();
-                                        string Year=DateTime.Now.Year.ToString();
-                                        string MinDate=Year+"-"+m+"-"+d;
-                                    }
-                                    <input asp-for="FechaDeEnvio" class="form-control" type="date" min="@MinDate"/>
-                                    <span asp-validation-for="FechaDeEnvio" class="text-danger"></span>
+                            <div>
+                                <div class="col-12">
+                                    <label class="form-control-label">Notas especiales:</label>
+                                    <textarea asp-for="SpecialNote" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-12">
+                                    <label>Ingresa el d&iacute;a que quieres recibir tu entrega</label>
+                                    <div class="form-group">
+                                        @{
+                                            string d="",m="";
+                                            int Day=DateTime.Now.Day+1;
+                                            if(Day<10) d="0"+Day.ToString();
+                                            else d=Day.ToString();
+                                            int Month=DateTime.Now.Month;
+                                            if(Month<10) m="0"+Month.ToString();
+                                            else m=Month.ToString();
+                                            string Year=DateTime.Now.Year.ToString();
+                                            string MinDate=Year+"-"+m+"-"+d;
+                                        }
+                                        <input asp-for="FechaDeEnvio" class="form-control" type="date" min="@MinDate"/>
+                                        <span asp-validation-for="FechaDeEnvio" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-12">
+                                        <label class="form-check-label">Politicas____</label>
+                                        <input asp-for="Politicas" required  class="form-check-input"/>
+                                    </div>
                                 </div>
                             </div>
                         <br />
