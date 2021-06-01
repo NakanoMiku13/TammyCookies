@@ -18,34 +18,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.userid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                Nombre
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Mail)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Apellidos)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Direccion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Colonia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CP)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Numero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Politicas)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Enviado)
@@ -55,6 +37,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FechaDeEnvio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialNote)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.RefPago)
@@ -75,29 +60,14 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.userid)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre)
+                <td class="text-wrap">
+                    @Html.DisplayFor(modelItem => item.Nombre) @Html.DisplayFor(modelItem => item.Apellidos)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Mail)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Apellidos)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Direccion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Estado)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Colonia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CP)
+                <td class="text-wrap">
+                    @Html.DisplayFor(modelItem => item.Direccion), @Html.DisplayFor(modelItem => item.Estado), @Html.DisplayFor(modelItem => item.Colonia), @Html.DisplayFor(modelItem => item.CP)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Numero)
@@ -105,14 +75,23 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Politicas)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Enviado)
-                </td>
+                @if(item.Enviado){
+                    <td class="text-success">
+                        Ha sido enviado
+                    </td>
+                }else{
+                    <td class="text-danger">
+                        No ha sido enviado
+                    </td>
+                }
                 <td>
                     @Html.DisplayFor(modelItem => item.Ordenado)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.FechaDeEnvio)
+                </td>
+                <td class="text-wrap">
+                    @Html.DisplayFor(modelItem =>item.SpecialNote)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.RefPago)

@@ -27,5 +27,6 @@ namespace TiendaEnLinea2.Data.Models
         public bool Cancelado { get; set; }
         public decimal Total { get; set; }
         public bool Pay {get;set;}
+        public string SpecialNote {get;set;}
     }
 }

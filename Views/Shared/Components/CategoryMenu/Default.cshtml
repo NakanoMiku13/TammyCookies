@@ -7,9 +7,9 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuReference">
             @foreach (var item in Model)
             {
-                <li><a asp-action="Index" asp-controller="Tienda" asp-route-Category="@item.id" class="dropdown-item">@item.Name</a></li>
+                <li><a asp-action="Index" asp-controller="Tienda" asp-route-Category="@item.id" class="dropdown-item btn btn-pink">@item.Name</a></li>
             }
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" asp-action="Index" asp-controller="Tienda">Ver todos</a></li>
+            <li><a class="dropdown-item btn btn-pink" asp-action="Index" asp-controller="Tienda">Ver todos</a></li>
         </ul>
 </div>
