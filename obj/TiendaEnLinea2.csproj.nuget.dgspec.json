@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/miku/TiendaEnLinea2/TiendaEnLinea2.csproj": {}
+    "/home/miku/Codigos/TiaShop/TammyCookies/TiendaEnLinea2.csproj": {}
   },
   "projects": {
-    "/home/miku/TiendaEnLinea2/TiendaEnLinea2.csproj": {
+    "/home/miku/Codigos/TiaShop/TammyCookies/TiendaEnLinea2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/miku/TiendaEnLinea2/TiendaEnLinea2.csproj",
+        "projectUniqueName": "/home/miku/Codigos/TiaShop/TammyCookies/TiendaEnLinea2.csproj",
         "projectName": "TiendaEnLinea2",
-        "projectPath": "/home/miku/TiendaEnLinea2/TiendaEnLinea2.csproj",
+        "projectPath": "/home/miku/Codigos/TiaShop/TammyCookies/TiendaEnLinea2.csproj",
         "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/home/miku/TiendaEnLinea2/obj/",
+        "outputPath": "/home/miku/Codigos/TiaShop/TammyCookies/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/root/.nuget/NuGet/NuGet.Config"
@@ -99,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }
